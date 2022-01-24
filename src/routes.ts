@@ -1,17 +1,14 @@
 import { Router } from "express";
-import { Animes } from "./controllers/animesController";
-import { Episodes } from "./controllers/episodesController";
+import { Songs } from "./controllers/songsController";
 
 const routes = Router();
 
-routes.get("/animes", new Animes().get);
-routes.get("/animes/:id", new Animes().getById);
-routes.get("/animes/title/:title", new Animes().getByName);
-
-
-// EPISODES
-routes.get("/episodes", new Episodes().get);
-routes.get("/episodes/:id", new Episodes().getById);
-routes.get("/episodes/anime/:id", new Episodes().getByAnimeId);
+// Songs
+routes.get("/songs", new Songs().get);
+routes.get("/songs/:id", new Songs().getById);
+routes.get("/songs/anime/:id", new Songs().getByAnimeId);
+routes.get("/songs/title/:title", new Songs().getByName);
+routes.get("/songs/artist/:artist", new Songs().getByArtist);
+// routes.get("/songs/album/:album", new Songs().getByAlbum);
 
 export {routes};
