@@ -1,1 +1,1 @@
-# aniApi
+# aniApi - Anime songbook
