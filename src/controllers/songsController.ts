@@ -56,6 +56,17 @@ export class Songs {
         }
     }
 
+    async getByYear(req, res) {
+        try {
+            const year = req.params.year
+            const {data} = await api.get(`song?year=${year}`);
+            return res.send(data.data);
+
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
     // async getByAlbum(req, res) {
     //     try {
     //         const album = req.params.album
